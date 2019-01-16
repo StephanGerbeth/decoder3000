@@ -1,6 +1,6 @@
 <template>
   <ul class="source">
-    <li v-for="entry in lastEntryInTextHistory" v-text="entry" v-bind:key="entry"></li> 
+    <li v-text="textFinal"></li>
     <li v-text="textPartial"></li>
   </ul>
 </template>
@@ -10,15 +10,8 @@ export default {
   data: function() {
     return {
       textPartial: "",
-      textHistory: []
+      textFinal: ""
     };
-  },
-
-  computed: {
-    lastEntryInTextHistory: function() {
-      console.log(this.textHistory[this.textHistory.length - 1]);
-      return [this.textHistory[this.textHistory.length - 1] || ""];
-    }
   }
 };
 </script>
